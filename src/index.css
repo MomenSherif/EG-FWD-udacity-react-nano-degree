@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full bg-[#090c13] text-white;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply text-transparent bg-gradient-to-b from-pink-400 to-red-600 bg-clip-text;
+  }
+  .gradient-bg {
+    @apply bg-gradient-to-b from-pink-400 to-red-600;
+  }
+}
