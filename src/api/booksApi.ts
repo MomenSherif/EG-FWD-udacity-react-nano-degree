@@ -28,7 +28,7 @@ const update = ({ book, shelf }: { book: Book; shelf: Shelf }) =>
       ...headers,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ shelf }),
+    body: JSON.stringify({ shelf: shelf || 'none' }),
   })
     .then(res => res.json())
     .then(() => ({

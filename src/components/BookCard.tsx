@@ -47,14 +47,13 @@ export default function BookCard({ book, onChangeShelf }: BookCardProps) {
             value={shelf}
             onChange={handleShelfChange}
           >
-            <option value="" disabled>
-              Move to...
-            </option>
+            <option disabled>Move to...</option>
             {shelves.map(shelf => (
               <option key={shelf} value={shelf}>
                 {shelfMap[shelf]}
               </option>
             ))}
+            <option value="">None</option>
           </select>
         </div>
       </div>
