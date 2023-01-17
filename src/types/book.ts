@@ -38,7 +38,7 @@ type Book = {
   allowAnonLogging: boolean;
   contentVersion: string;
   panelizationSummary: PanelizationSummary;
-  imageLinks: ImageLink;
+  imageLinks?: ImageLink;
   language: string;
   previewLink: string;
   infoLink: string;

@@ -12,7 +12,7 @@ export type BookCardProps = {
 };
 
 export default function BookCard({ book, onChangeShelf }: BookCardProps) {
-  const { title, authors, imageLinks, shelf = 'currentlyReading' } = book;
+  const { title, authors, imageLinks, shelf = '' } = book;
   const [isLoading, setIsLoading] = useState(false);
 
   const handleShelfChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -25,10 +25,10 @@ export default function BookCard({ book, onChangeShelf }: BookCardProps) {
   return (
     <article className="relative bg-slate-900 shadow-lg rounded-xl ">
       <div className="relative">
-        <Ribbon>{shelfMap[shelf]}</Ribbon>
+        {shelf && <Ribbon>{shelfMap[shelf]}</Ribbon>}
         <img
           className="h-72 w-full object-cover  rounded-t-lg"
-          src={imageLinks.thumbnail}
+          src={imageLinks?.thumbnail}
           alt={title}
         />
 
